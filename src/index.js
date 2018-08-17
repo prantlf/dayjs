@@ -43,21 +43,66 @@ Utils.parseLocale = parseLocale
 Utils.isDayjs = isDayjs
 Utils.wrapper = wrapper
 
+const parseDateStringWithoutTimeZone = (date) => {
+  const dateMatch = date.match(C.REGEX_PARSE)
+  return dateMatch && {
+    year: dateMatch[1],
+    monthIndex: dateMatch[2] - 1,
+    day: dateMatch[3] || 1,
+    hours: dateMatch[5] || 0,
+    minutes: dateMatch[6] || 0,
+    seconds: dateMatch[7] || 0,
+    miliseconds: dateMatch[8] || 0
+  }
+}
+
+const parseDateStringWithTimeZone = (date, zoneMatch) => {
+  date = date.substr(0, date.length - zoneMatch[0].length)
+  const parts = parseDateStringWithoutTimeZone(date)
+  if (parts) {
+    const timeZoneOffset = ((Number(zoneMatch[2]) * 60) + Number(zoneMatch[3]))
+      * C.MILLISECONDS_A_MINUTE
+    parts.timeZoneOffset = zoneMatch[1] === '+' ? -timeZoneOffset : timeZoneOffset
+  }
+  return parts
+}
+
+const createDateFromParts = (parts) => {
+  const {
+    year, monthIndex, day, hours, minutes, seconds, miliseconds, timeZoneOffset
+  } = parts
+  if (typeof timeZoneOffset === 'number') {
+    const utcTime = Date.UTC(year, monthIndex, day, hours, minutes, seconds, miliseconds)
+    return new Date(utcTime + timeZoneOffset)
+  }
+  return new Date(year, monthIndex, day, hours, minutes, seconds, miliseconds)
+}
+
+const parseDateString = (date) => {
+  const dateLength = date.length
+  const lastChar = date[dateLength - 1]
+  let parts
+  if (lastChar === 'Z' || lastChar === 'z') {
+    parts = parseDateStringWithoutTimeZone(date.substr(0, dateLength - 1), 0)
+    if (parts) {
+      parts.timeZoneOffset = 0
+    }
+  } else {
+    const match = date.match(/([-+])(\d{1,2}):?(\d{1,2})$/i)
+    if (match) {
+      parts = parseDateStringWithTimeZone(date, match)
+    } else {
+      parts = parseDateStringWithoutTimeZone(date)
+    }
+  }
+  return parts ? createDateFromParts(parts) : new Date('invalid')
+}
+
 const parseDate = (date) => {
-  let reg
   if (date === null) return new Date(NaN) // Treat null as an invalid date
   if (Utils.isUndefined(date)) return new Date()
   if (date instanceof Date) return date
-  // eslint-disable-next-line no-cond-assign
-  if ((typeof date === 'string')
-    && (/.*[^Z]$/i.test(date)) // looking for a better way
-    && (reg = date.match(C.REGEX_PARSE))) {
-    // 2018-08-08 or 20180808
-    return new Date(
-      reg[1], reg[2] - 1, reg[3] || 1,
-      reg[5] || 0, reg[6] || 0, reg[7] || 0, reg[8] || 0
-    )
-  }
+  if (typeof date === 'string') return parseDateString(date)
   return new Date(date) // timestamp
 }
 

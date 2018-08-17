@@ -35,10 +35,17 @@ describe('Parse', () => {
     expect(dayjs(d).format()).toBe(moment(d).format()) // not recommend
     d = '2018-05-02T11:12:13Z' // should go direct to new Date() rather our regex
     expect(dayjs(d).format()).toBe(moment(d).format()) // not recommend
+    d = '2018-05-02T11:12:13+00:00' // should go direct to new Date() rather our regex
+    expect(dayjs(d).format()).toBe(moment(d).format()) // not recommend
+  })
+
+  it('String ISO 8601 date, time and UTC', () => {
+    const time = '2018-04-04T16:00:00.000Z'
+    expect(dayjs(time).valueOf()).toBe(moment(time).valueOf())
   })
 
   it('String ISO 8601 date, time and zone', () => {
-    const time = '2018-04-04T16:00:00.000Z'
+    const time = '2018-04-04T16:00:00.000+04:30'
     expect(dayjs(time).valueOf()).toBe(moment(time).valueOf())
   })
 
