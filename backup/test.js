@@ -1,0 +1,8 @@
+dayjs = require('.')
+timeZone = require('./plugin/timeZone')
+dayjs.extend(timeZone)
+now = dayjs()
+console.log('Now:', now.format(), now.toISOString())
+console.log('Now in London:', now.format({timeZone: 'Europe/London'}))
+date = dayjs('2018-08-17T20:52:19', {timeZone: 'Europe/London'})
+console.log('London:', date.format(), date.toISOString())
