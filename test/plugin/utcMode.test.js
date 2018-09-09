@@ -48,6 +48,10 @@ describe('Getters in UTC mode', () => {
 })
 
 describe('Setters in UTC mode', () => {
+  it('Set Day', () => {
+    expect(dayjs().set('date', 30).valueOf()).toBe(moment().set('date', 30).valueOf())
+  })
+
   it('Set UTC Day', () => {
     expect(dayjs().utc().set('date', 30).valueOf()).toBe(moment().utc().set('date', 30).valueOf())
   })
@@ -81,11 +85,17 @@ describe('Setters in UTC mode', () => {
   })
 })
 
-it('StartOf EndOf Year ... in UTC mode', () => {
-  const testArr = ['year', 'month', 'day', 'date', 'week', 'hour', 'minute', 'second']
-  testArr.forEach((d) => {
-    expect(dayjs().utc().startOf(d).valueOf()).toBe(moment().utc().startOf(d).valueOf())
-    expect(dayjs().utc().endOf(d).valueOf()).toBe(moment().utc().endOf(d).valueOf())
+describe('StartOf EndOf Year ... with UTC plugin', () => {
+  it('StartOf EndOf Year ... in UTC mode', () => {
+    const testArr = ['year', 'month', 'day', 'date', 'week', 'hour', 'minute', 'second']
+    testArr.forEach((d) => {
+      expect(dayjs().utc().startOf(d).valueOf()).toBe(moment().utc().startOf(d).valueOf())
+      expect(dayjs().utc().endOf(d).valueOf()).toBe(moment().utc().endOf(d).valueOf())
+    })
+  })
+
+  it('StartOf month in the local time zone', () => {
+    expect(dayjs().startOf('month').valueOf()).toBe(moment().startOf('month').valueOf())
   })
 })
 
@@ -105,9 +115,20 @@ describe('Parsing in constructor in UTC mode', () => {
   })
 })
 
-it('Formats an UTC instance to UTC', () => {
-  const instance = dayjs('2018-09-06T19:34:28Z', { utc: true })
-  expect(instance.format()).toEqual('2018-09-06T19:34:28+00:00')
+describe('Formatting in UTC mode', () => {
+  it('Formats an UTC instance to the default format', () => {
+    const instance = dayjs('2018-09-06T19:34:28Z', { utc: true })
+    expect(instance.format()).toEqual('2018-09-06T19:34:28+00:00')
+  })
+
+  it('Formats an instance in the local time zone', () => {
+    expect(dayjs().format()).toBe(moment().format())
+  })
+
+  it('Formats compact time zone', () => {
+    const instance = dayjs('2018-09-06T19:34:28Z', { utc: true })
+    expect(instance.format('ZZ')).toEqual('+0000')
+  })
 })
 
 describe('isUTC', () => {

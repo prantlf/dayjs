@@ -44,10 +44,10 @@ Utils.parseLocale = parseLocale
 Utils.isDayjs = isDayjs
 Utils.wrapper = wrapper
 
-const createDate = (cfg, year, month, day, hours, minutes, seconds, milliseconds) =>
+Utils.createFullDate = (cfg, year, month, day, hours, minutes, seconds, milliseconds) =>
   new Date(year, month, day, hours, minutes, seconds, milliseconds)
 
-Utils.createDate = createDate
+Utils.createDateOnly = (instance, year, month, day) => new Date(year, month, day)
 
 const parseDate = (cfg) => {
   const { date } = cfg
@@ -60,7 +60,7 @@ const parseDate = (cfg) => {
     && (/.*[^Z]$/i.test(date)) // looking for a better way
     && (reg = date.match(C.REGEX_PARSE))) {
     // 2018-08-08 or 20180808
-    return Utils.createDate(
+    return Utils.createFullDate(
       cfg, reg[1], reg[2] - 1, reg[3] || 1,
       reg[5] || 0, reg[6] || 0, reg[7] || 0, reg[8] || 0
     )
@@ -69,6 +69,25 @@ const parseDate = (cfg) => {
 }
 
 Utils.parseDate = parseDate
+
+const localDatePartSetters = {
+  year: 'setFullYear',
+  month: 'setMonth',
+  date: 'setDate',
+  day: 'setDate',
+  hour: 'setHours',
+  minute: 'setMinutes',
+  second: 'setSeconds',
+  millisecond: 'setMilliseconds'
+}
+
+Utils.getDatePartSetter = (instance, unit) => localDatePartSetters[unit]
+
+const localTimePartSetters = [
+  'setHours', 'setMinutes', 'setSeconds', 'setMilliseconds'
+]
+
+Utils.getTimePartSetters = (/* instance */) => (localTimePartSetters)
 
 class Dayjs {
   constructor(cfg) {
@@ -161,13 +180,16 @@ class Dayjs {
   startOf(units, startOf) { // startOf -> endOf
     const isStartOf = !Utils.isUndefined(startOf) ? startOf : true
     const unit = Utils.prettyUnit(units)
+    const setters = Utils.getTimePartSetters(this)
     const instanceFactory = (d, m) => {
-      const ins = Utils.wrapper(new Date(this.$y, m, d), this)
+      const date = Utils.createDateOnly(this, this.$y, m, d)
+      const ins = Utils.wrapper(date, this)
       return isStartOf ? ins : ins.endOf(C.D)
     }
-    const instanceFactorySet = (method, slice) => {
+    const instanceFactorySet = (slice) => {
       const argumentStart = [0, 0, 0, 0]
       const argumentEnd = [23, 59, 59, 999]
+      const method = setters[slice]
       return Utils.wrapper(this.toDate()[method].apply( // eslint-disable-line prefer-spread
         this.toDate(),
         isStartOf ? argumentStart.slice(slice) : argumentEnd.slice(slice)
@@ -185,13 +207,13 @@ class Dayjs {
           instanceFactory(this.$D + (6 - this.$W), this.$M)
       case C.D:
       case C.DATE:
-        return instanceFactorySet('setHours', 0)
+        return instanceFactorySet(0)
       case C.H:
-        return instanceFactorySet('setMinutes', 1)
+        return instanceFactorySet(1)
       case C.MIN:
-        return instanceFactorySet('setSeconds', 2)
+        return instanceFactorySet(2)
       case C.S:
-        return instanceFactorySet('setMilliseconds', 3)
+        return instanceFactorySet(3)
       default:
         return this.clone()
     }
@@ -203,35 +225,18 @@ class Dayjs {
 
   $set(units, int) { // private set
     const unit = Utils.prettyUnit(units)
-    switch (unit) {
-      case C.D:
-        this.$d.setDate(this.$D + (int - this.$W))
-        break
-      case C.DATE:
-        this.$d.setDate(int)
-        break
-      case C.M:
-        this.$d.setMonth(int)
-        break
-      case C.Y:
-        this.$d.setFullYear(int)
-        break
-      case C.H:
-        this.$d.setHours(int)
-        break
-      case C.MIN:
-        this.$d.setMinutes(int)
-        break
-      case C.S:
-        this.$d.setSeconds(int)
-        break
-      case C.MS:
-        this.$d.setMilliseconds(int)
-        break
-      default:
-        break
+    const setter = Utils.getDatePartSetter(this, unit)
+    if (setter) {
+      switch (unit) {
+        case C.D:
+          this.$d[setter](this.$D + (int - this.$W))
+          break
+        default:
+          this.$d[setter](int)
+          break
+      }
+      this.init()
     }
-    this.init()
     return this
   }
 
