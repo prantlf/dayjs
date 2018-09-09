@@ -39,6 +39,7 @@ const dayjs = (date, c) => {
 const wrapper = (date, instance) => dayjs(date, { locale: instance.$L })
 
 const Utils = U // for plugin use
+Utils.L = L
 Utils.parseLocale = parseLocale
 Utils.isDayjs = isDayjs
 Utils.wrapper = wrapper
@@ -153,13 +154,13 @@ class Dayjs {
     const isStartOf = !Utils.isUndefined(startOf) ? startOf : true
     const unit = Utils.prettyUnit(units)
     const instanceFactory = (d, m) => {
-      const ins = wrapper(new Date(this.$y, m, d), this)
+      const ins = Utils.wrapper(new Date(this.$y, m, d), this)
       return isStartOf ? ins : ins.endOf(C.D)
     }
     const instanceFactorySet = (method, slice) => {
       const argumentStart = [0, 0, 0, 0]
       const argumentEnd = [23, 59, 59, 999]
-      return wrapper(this.toDate()[method].apply( // eslint-disable-line prefer-spread
+      return Utils.wrapper(this.toDate()[method].apply( // eslint-disable-line prefer-spread
         this.toDate(),
         isStartOf ? argumentStart.slice(slice) : argumentEnd.slice(slice)
       ), this)
@@ -265,7 +266,7 @@ class Dayjs {
         step = 1
     }
     const nextTimeStamp = this.valueOf() + (number * step)
-    return wrapper(nextTimeStamp, this)
+    return Utils.wrapper(nextTimeStamp, this)
   }
 
   subtract(number, string) {
@@ -390,7 +391,7 @@ class Dayjs {
   }
 
   clone() {
-    return wrapper(this.toDate(), this)
+    return Utils.wrapper(this.toDate(), this)
   }
 
   toDate() {
