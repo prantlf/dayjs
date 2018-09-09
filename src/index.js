@@ -44,7 +44,13 @@ Utils.parseLocale = parseLocale
 Utils.isDayjs = isDayjs
 Utils.wrapper = wrapper
 
-const parseDate = (date) => {
+const createDate = (cfg, year, month, day, hours, minutes, seconds, milliseconds) =>
+  new Date(year, month, day, hours, minutes, seconds, milliseconds)
+
+Utils.createDate = createDate
+
+const parseDate = (cfg) => {
+  const { date } = cfg
   let reg
   if (date === null) return new Date(NaN) // Treat null as an invalid date
   if (Utils.isUndefined(date)) return new Date()
@@ -54,13 +60,15 @@ const parseDate = (date) => {
     && (/.*[^Z]$/i.test(date)) // looking for a better way
     && (reg = date.match(C.REGEX_PARSE))) {
     // 2018-08-08 or 20180808
-    return new Date(
-      reg[1], reg[2] - 1, reg[3] || 1,
+    return Utils.createDate(
+      cfg, reg[1], reg[2] - 1, reg[3] || 1,
       reg[5] || 0, reg[6] || 0, reg[7] || 0, reg[8] || 0
     )
   }
   return new Date(date) // timestamp
 }
+
+Utils.parseDate = parseDate
 
 class Dayjs {
   constructor(cfg) {
@@ -68,7 +76,7 @@ class Dayjs {
   }
 
   parse(cfg) {
-    this.$d = parseDate(cfg.date)
+    this.$d = parseDate(cfg)
     this.init(cfg)
   }
 

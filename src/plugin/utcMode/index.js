@@ -1,38 +1,16 @@
 import * as C from '../../constant'
 import U from '../../utils'
 
-const parseDate = (cfg) => {
-  const { date } = cfg
-  let reg
-  if (date === null) return new Date(NaN) // Treat null as an invalid date
-  if (U.isUndefined(date)) return new Date()
-  if (date instanceof Date) return date
-  // eslint-disable-next-line no-cond-assign
-  if (typeof date === 'string'
-    && date[date.length - 1] !== 'Z'
-    && (reg = date.match(C.REGEX_PARSE))) {
-    const year = reg[1]
-    const month = reg[2] - 1
-    const day = reg[3] || 1
-    const hours = reg[5] || 0
-    const minutes = reg[6] || 0
-    const seconds = reg[7] || 0
-    const milliseconds = reg[8] || 0
-    return cfg && cfg.utc
+export default (o, c, dayjs) => { // locale needed later
+  U.wrapper = (date, instance) => dayjs(date, { locale: instance.$L, utc: instance.$u })
+  U.createDate = (cfg, year, month, day, hours, minutes, seconds, milliseconds) => {
+    const { utc } = cfg
+    return utc
       ? new Date(Date.UTC(year, month, day, hours, minutes, seconds, milliseconds))
       : new Date(year, month, day, hours, minutes, seconds, milliseconds)
   }
-  return new Date(date)
-}
-
-export default (o, c, dayjs) => { // locale needed later
-  U.wrapper = (date, instance) => dayjs(date, { locale: instance.$L, utc: instance.$u })
   const proto = c.prototype
   const oldFormat = proto.format
-  proto.parse = function (cfg) {
-    this.$d = parseDate(cfg)
-    this.init(cfg)
-  }
   proto.init = function (cfg) {
     const utc = cfg && !!cfg.utc
     const date = this.$d
