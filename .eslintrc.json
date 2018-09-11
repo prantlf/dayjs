@@ -25,6 +25,9 @@
     "func-names": [
       0
     ],
+    "implicit-arrow-linebreak": [
+      0
+    ],
     "import/no-extraneous-dependencies": [
       0
     ],
@@ -39,6 +42,12 @@
     "import/extensions": [
       2,
       "ignorePackages"
+    ],
+    "object-curly-newline": [
+      0
+    ],
+    "operator-linebreak": [
+      0
     ]
   }
 }

@@ -1,5 +1,5 @@
 const babel = require('rollup-plugin-babel')
-const uglify = require('rollup-plugin-uglify')
+const { uglify } = require('rollup-plugin-uglify')
 
 module.exports = (config) => {
   const { input, fileName, name } = config

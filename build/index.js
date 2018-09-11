@@ -1,8 +1,8 @@
 const rollup = require('rollup')
-const configFactory = require('./rollup.config')
 const fs = require('fs')
 const util = require('util')
 const path = require('path')
+const configFactory = require('./rollup.config')
 
 const { promisify } = util
 
