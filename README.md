@@ -1,7 +1,7 @@
-# Day.js Extended
+<h1 align="center">Day.js Extended</h1>
 
 <p align="center">Fast <b>2kB</b> alternative to Moment.js with the same modern API</p>
-<p align="center">(This is an <a href="#extensions-to-the-original-project">extended</a> fork of the <a href="https://github.com/imakun/dayjs">original project</a>.)</p>
+<p align="center">(This is an <a href="#extensions-to-the-original-project">extended</a> fork of the <a href="https://github.com/iamkun/dayjs">original project</a>.)</p>
 <br>
 <p align="center">
     <a href="https://unpkg.com/dayjs-ext/dayjs.min.js"><img
@@ -116,9 +116,9 @@ See the [contributor list at the original project]. Thank you for your help!
 
 Day.js is Extended licensed under a [MIT  License](./LICENSE).
 
-[original project]: https://github.com/imakun/dayjs
-[sponsor list at the original project]: https://github.com/imakun/dayjs#sponsors
-[contributor list at the original project]: https://github.com/imakun/dayjs#sponsors
+[original project]: https://github.com/iamkun/dayjs
+[sponsor list at the original project]: https://github.com/iamkun/dayjs#sponsors
+[contributor list at the original project]: https://github.com/iamkun/dayjs#sponsors
 [localisableFormat]: ./docs/en/Plugin.md#localisableformat
 [timeZone]: ./docs/en/Plugin.md#timezone
 [relativeTime]: ./docs/en/Plugin.md#relativetime
