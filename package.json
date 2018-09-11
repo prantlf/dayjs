@@ -1,5 +1,5 @@
 {
-  "name": "dayjs",
+  "name": "dayjs-ext",
   "version": "0.0.0-development",
   "description": "2KB immutable date time library alternative to Moment.js with the same modern API ",
   "main": "dayjs.min.js",
@@ -43,16 +43,28 @@
   },
   "keywords": [
     "dayjs",
+    "dayjs-extended",
     "date",
     "time",
+    "time-zone",
     "immutable",
     "moment"
   ],
   "author": "iamkun",
   "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/prantlf/dayjs/blob/master/LICENSE"
+    }
+  ],
+  "homepage": "https://github.com/prantlf/dayjs.git#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iamkun/dayjs.git"
+    "url": "https://github.com/prantlf/dayjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prantlf/dayjs/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.44",
