@@ -25,17 +25,17 @@ dayjs.extend(plugin, options) // with plugin options
 * Via NPM:
 
 ```javascript
-import dayjs from 'dayjs'
-import AdvancedFormat from 'dayjs/plugin/AdvancedFormat' // load on demand
+import dayjs from 'dayjs-ext'
+import AdvancedFormat from 'dayjs-ext/plugin/AdvancedFormat' // load on demand
 
 dayjs.extend(AdvancedFormat) // use plugin
 ```
 
 * Via CDN:
 ```html
-<script src="https://unpkg.com/dayjs"></script>
+<script src="https://unpkg.com/dayjs-ext"></script>
 <!-- Load plugin as window.dayjs_plugin_NAME -->
-<script src="https://unpkg.com/dayjs/plugin/advancedFormat"></script>
+<script src="https://unpkg.com/dayjs-ext/plugin/advancedFormat"></script>
 <script>
   dayjs.extend(dayjs_plugin_advancedFormat);
 </script>
@@ -47,7 +47,7 @@ dayjs.extend(AdvancedFormat) // use plugin
  - AdvancedFormat extends `dayjs().format` API to supply more format options.
 
 ```javascript
-import advancedFormat from 'dayjs/plugin/advancedFormat'
+import advancedFormat from 'dayjs-ext/plugin/advancedFormat'
 
 dayjs.extend(advancedFormat)
 
@@ -69,7 +69,7 @@ List of added formats:
  - LocalisableFormat extends `dayjs().format` API to supply localisable format options known from Moment.js.
 
 ```javascript
-import localisableFormat from 'dayjs/plugin/localisableFormat'
+import localisableFormat from 'dayjs-ext/plugin/localisableFormat'
 
 dayjs.extend(localisableFormat)
 
@@ -91,7 +91,7 @@ List of added formats:
  - RelativeTime adds `.from` `.to` `.fromNow` `.toNow` APIs to formats date to relative time strings (e.g. 3 hours ago).
 
 ```javascript
-import relativeTime from 'dayjs/plugin/relativeTime'
+import relativeTime from 'dayjs-ext/plugin/relativeTime'
 
 dayjs.extend(relativeTime)
 
@@ -139,7 +139,7 @@ Returns the `string` of relative time to X.
  - IsLeapYear adds `.isLeapYear` API to returns a `boolean` indicating whether the `Dayjs`'s year is a leap year or not.
 
 ```javascript
-import isLeapYear from 'dayjs/plugin/isLeapYear'
+import isLeapYear from 'dayjs-ext/plugin/isLeapYear'
 
 dayjs.extend(isLeapYear)
 
@@ -152,7 +152,7 @@ dayjs('2000-01-01').isLeapYear(); // true
 - To calculate BE year manually, just add 543 to year. For example 26 May 1977 AD/CE should display as 26 May 2520 BE (1977 + 543)
 
 ```javascript
-import buddhistEra from 'dayjs/plugin/buddhistEra'
+import buddhistEra from 'dayjs-ext/plugin/buddhistEra'
 
 dayjs.extend(buddhistEra)
 
@@ -170,7 +170,7 @@ List of added formats:
  - WeekOfYear adds `.week()` API to returns a `number` indicating the `Dayjs`'s week of the year.
 
 ```javascript
-import weekOfYear from 'dayjs/plugin/weekOfYear'
+import weekOfYear from 'dayjs-ext/plugin/weekOfYear'
 
 dayjs.extend(weekOfYear)
 
@@ -181,7 +181,7 @@ dayjs('06/27/2018').week() // 26
  - IsBetween adds `.isBetween()` API to returns a `boolean` indicating if a date is between two other dates.
 
 ```javascript
-import isBetween from 'dayjs/plugin/isBetween'
+import isBetween from 'dayjs-ext/plugin/isBetween'
 
 dayjs.extend(isBetween)
 
@@ -192,7 +192,7 @@ dayjs('2010-10-20').isBetween('2010-10-19', dayjs('2010-10-25')); // true
  - TimeZone extends `dayjs()` and `dayjs().format` APIs to support the most important usage scenatrios - parsing from a specific time zone and formatting in other time zone.
 
 ```javascript
-import timeZone from 'dayjs/plugin/timeZone'
+import timeZone from 'dayjs-ext/plugin/timeZone'
 
 dayjs.extend(timeZone)
 

@@ -1,26 +1,26 @@
-English | [简体中文](./docs/zh-cn/README.zh-CN.md) | [日本語](./docs/ja/README-ja.md) | [Português Brasileiro](./docs/pt-br/README-pt-br.md) | [한국어](./docs/ko/README-ko.md)
+# Day.js Extended
 
-<p align="center"><a href="#" target="_blank" rel="noopener noreferrer"><img width="550"
-                                                                             src="https://user-images.githubusercontent.com/17680888/39081119-3057bbe2-456e-11e8-862c-646133ad4b43.png"
-                                                                             alt="Day.js"></a></p>
 <p align="center">Fast <b>2kB</b> alternative to Moment.js with the same modern API</p>
+<p align="center">(This is an <a href="#extensions-to-the-original-project">extended</a> fork of the <a href="https://github.com/imakun/dayjs">original project</a>.)</p>
 <br>
 <p align="center">
-    <a href="https://unpkg.com/dayjs/dayjs.min.js"><img
-            src="http://img.badgesize.io/https://unpkg.com/dayjs/dayjs.min.js?compression=gzip&style=flat-square"
-            alt="Gzip Size"></a>
-    <a href="https://www.npmjs.com/package/dayjs"><img src="https://img.shields.io/npm/v/dayjs.svg?style=flat-square&colorB=51C838"
-                                                       alt="NPM Version"></a>
-    <a href="https://travis-ci.org/iamkun/dayjs"><img
-            src="https://img.shields.io/travis/iamkun/dayjs/master.svg?style=flat-square" alt="Build Status"></a>
-    <a href="https://codecov.io/gh/iamkun/dayjs"><img
-            src="https://img.shields.io/codecov/c/github/iamkun/dayjs/master.svg?style=flat-square" alt="Codecov"></a>
-    <a href="https://github.com/iamkun/dayjs/blob/master/LICENSE"><img
-            src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="License"></a>
+    <a href="https://unpkg.com/dayjs-ext/dayjs.min.js"><img
+       src="http://img.badgesize.io/https://unpkg.com/dayjs-ext/dayjs.min.js?compression=gzip&style=flat-square"
+       alt="Gzip Size"></a>
+    <a href="https://www.npmjs.com/package/dayjs-ext"><img
+       src="https://img.shields.io/npm/v/dayjs-ext.svg?style=flat-square&colorB=51C838"
+       alt="NPM Version"></a>
+    <a href="https://travis-ci.org/prantlf/dayjs"><img
+       src="https://img.shields.io/travis/prantlf/dayjs/master.svg?style=flat-square" alt="Build Status"></a>
+    <a href="https://codecov.io/gh/prantlf/dayjs"><img
+       src="https://img.shields.io/codecov/c/github/prantlf/dayjs/master.svg?style=flat-square" alt="Codecov"></a>
+    <a href="https://github.com/prantlf/dayjs/blob/master/LICENSE"><img
+       src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="License"></a>
     <br>
-    <a href="https://saucelabs.com/u/dayjs">
-        <img width="750" src="https://user-images.githubusercontent.com/17680888/40040137-8e3323a6-584b-11e8-9dba-bbe577ee8a7b.png" alt="Sauce Test Status">
-    </a>
+    <a href="https://saucelabs.com/u/dayjs-ext"><img
+       width="750"
+       src="https://user-images.githubusercontent.com/17680888/40040137-8e3323a6-584b-11e8-9dba-bbe577ee8a7b.png"
+       alt="Sauce Test Status"></a>
 </p>
 
 > Day.js is a minimalist JavaScript library that parses, validates, manipulates, and displays dates and times for modern browsers with a largely Moment.js-compatible API. If you use Moment.js, you already know how to use Day.js.
@@ -36,6 +36,14 @@ dayjs().startOf('month').add(1, 'day').set('year', 2018).format('YYYY-MM-DD HH:m
 * 📦 2kb mini library
 * 👫 All browsers supported
 
+## Extensions to the original project
+
+* New plugin "[localisableFormat]" to format dates according to the chosen locale.
+* New plugin "[timeZone]" to parse from and format to a date string using a time zone specified by its canonical name.
+* Corrected plugin "[relativeTime]" honouring grammar rules of the supported languages.
+* "[UTC mode]" for working in UTC, or for working with date-only values without the time part.
+* Additional locales ([cs], [sk]).
+
 ---
 
 ## Getting Started
@@ -43,7 +51,7 @@ dayjs().startOf('month').add(1, 'day').set('year', 2018).format('YYYY-MM-DD HH:m
 ### Installation
 
 ```console
-npm install dayjs --save
+npm install dayjs-ext --save
 ```
 
 📚[Installation Guide](./docs/en/Installation.md)
@@ -73,7 +81,7 @@ Day.js has great support for internationalization.
 But none of them will be included in your build unless you use it.
 
 ```javascript
-import 'dayjs/locale/es' // load on demand
+import 'dayjs-ext/locale/es' // load on demand
 
 dayjs.locale('es') // use Spanish locale globally
 
@@ -86,33 +94,34 @@ dayjs('2018-05-05').locale('zh-cn').format() // use Chinese Simplified locale in
 A plugin is an independent module that can be added to Day.js to extend functionality or add new features.
 
 ```javascript
-import advancedFormat from 'dayjs/plugin/advancedFormat' // load on demand
+import timeZone from 'dayjs-ext/plugin/timeZone' // load on demand
 
-dayjs.extend(advancedFormat) // use plugin
+dayjs.extend(timeZone) // use plugin
 
-dayjs().format('Q Do k kk X x') // more available formats
+dayjs().format('D.M.YYYY H:mm',
+  { timeZone: 'Europe/Berlin' }) // convert to CET before formatting
 ```
 
 📚[Plugin List](./docs/en/Plugin.md)
 
 ## Sponsors
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/dayjs#sponsor)]
-
-<a href="https://opencollective.com/dayjs/sponsor/0/website" target="_blank"><img src="https://opencollective.com/dayjs/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/dayjs/sponsor/1/website" target="_blank"><img src="https://opencollective.com/dayjs/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/dayjs/sponsor/2/website" target="_blank"><img src="https://opencollective.com/dayjs/sponsor/2/avatar.svg"></a>
+See the [sponsor list at the original project]. Thank you for your support!
 
 ## Contributors
 
-This project exists thanks to all the people who contribute.
-
-Please give us a 💖 star 💖 to support us. Thank you.
-
-And thank you to all our backers! 🙏
-<a href="https://opencollective.com/dayjs#backers" target="_blank"><img src="https://opencollective.com/dayjs/contributors.svg?width=890" /></a>
-
+See the [contributor list at the original project]. Thank you for your help!
 
 ## License
 
-Day.js is licensed under a [MIT  License](./LICENSE).
+Day.js is Extended licensed under a [MIT  License](./LICENSE).
+
+[original project]: https://github.com/imakun/dayjs
+[sponsor list at the original project]: https://github.com/imakun/dayjs#sponsors
+[contributor list at the original project]: https://github.com/imakun/dayjs#sponsors
+[localisableFormat]: ./docs/en/Plugin.md#localisableformat
+[timeZone]: ./docs/en/Plugin.md#timezone
+[relativeTime]: ./docs/en/Plugin.md#relativetime
+[UTC mode]: ./docs/en/API-reference.md#utc-mode
+[cs]: ./src/locale/cs.js
+[sk]: ./src/locale/sk.js

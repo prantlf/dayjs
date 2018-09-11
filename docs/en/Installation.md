@@ -5,13 +5,13 @@ You have multiple ways of getting Day.js:
 * Via NPM:
 
 ```console
-npm install dayjs --save
+npm install dayjs-ext --save
 ```
 
 ```js
-import dayjs from 'dayjs'
+import dayjs from 'dayjs-ext'
 // Or CommonJS
-// var dayjs = require('dayjs');
+// var dayjs = require('dayjs-ext');
 dayjs().format();
 ```
 
@@ -19,7 +19,7 @@ dayjs().format();
 
 ```html
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://unpkg.com/dayjs"></script>
+<script src="https://unpkg.com/dayjs-ext"></script>
 <script>
   dayjs().format();
 </script>
@@ -27,4 +27,4 @@ dayjs().format();
 
 * Via download and self-hosting:
 
-Just download the latest version of Day.js at [https://unpkg.com/dayjs/](https://unpkg.com/dayjs/)
+Just download the latest version of Day.js at [https://unpkg.com/dayjs-ext/](https://unpkg.com/dayjs-ext/)
