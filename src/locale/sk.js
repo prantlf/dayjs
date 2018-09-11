@@ -2,8 +2,8 @@ import dayjs from 'dayjs'
 
 const locale = {
   name: 'sk',
-  weekdays: 'Pondelok_Utorok_Streda_Štvrtok_Piatok_Sobota_Nedeľa'.split('_'),
-  months: 'Január_Február_Marec_Apríl_Máj_Jún_Júl_August_September_Október_November_December'.split('_'),
+  weekdays: 'pondelok_utorok_streda_štvrtok_piatok_sobota_nedeľa'.split('_'),
+  months: 'január_február_marec_apríl_máj_jún_júl_august_september_október_november_december'.split('_'),
   formats: {
     LT: 'H:mm',
     LTS: 'H:mm:ss',
