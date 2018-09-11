@@ -152,4 +152,3 @@ it('Immutable Set', () => {
   expect(dayjsA.valueOf()).not.toBe(dayjsB.valueOf())
   expect(momentA.valueOf()).toBe(momentB.valueOf())
 })
-
