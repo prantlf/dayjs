@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    "coverage": true,
+    "locale": true,
+    "node_modules": true,
+    "plugin": true,
+    "*.min.js*": true
+  }
+}
