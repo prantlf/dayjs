@@ -2,7 +2,8 @@ language: node_js
 cache:
   directories:
     - ~/.npm
-    - node_modules
+notifications:
+  email: false
 node_js:
   - '10'
   - '8'
@@ -14,9 +15,11 @@ script:
   - npm run lint
   - npm test
   - codecov
+  - npm run build
 after_success:
   - if [ "$TRAVIS_BRANCH" == "combined" ]; then
-      npx travis-deploy-once && npm run build && npm install -g @semantic-release/changelog @semantic-release/git  semantic-release && semantic-release && npm run test:sauce;
+      npm install -g travis-deploy-once @semantic-release/changelog @semantic-release/git semantic-release
+      npm run travis-deploy-once "npm run semantic-release"
     fi
 branches:
   except:
