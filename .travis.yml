@@ -9,7 +9,7 @@ node_js:
   - '8'
   - '6'
 install:
-  - npm install -g codecov
+  - npm install -g codecov travis-deploy-once @semantic-release/changelog @semantic-release/git semantic-release
   - npm install
 script:
   - npm run lint
@@ -17,7 +17,7 @@ script:
   - codecov
 after_success:
   - if [ "$TRAVIS_BRANCH" == "combined" ]; then
-      npm run build && npm install -g travis-deploy-once @semantic-release/changelog @semantic-release/git semantic-release && npm run travis-deploy-once "npm run semantic-release"
+      npm run build && npm run travis-deploy-once "npm run semantic-release"
     fi
 branches:
   except:
