@@ -15,11 +15,9 @@ script:
   - npm run lint
   - npm test
   - codecov
-  - npm run build
 after_success:
   - if [ "$TRAVIS_BRANCH" == "combined" ]; then
-      npm install -g travis-deploy-once @semantic-release/changelog @semantic-release/git semantic-release
-      npm run travis-deploy-once "npm run semantic-release"
+      npm run build && npm install -g travis-deploy-once @semantic-release/changelog @semantic-release/git semantic-release && npm run travis-deploy-once "npm run semantic-release"
     fi
 branches:
   except:
