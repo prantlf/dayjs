@@ -38,7 +38,7 @@ dayjs().startOf('month').add(1, 'day').set('year', 2018).format('YYYY-MM-DD HH:m
 
 ## Extensions to the original project
 
-* New plugin "[localisableFormat]" to format dates according to the chosen locale.
+* New plugin "[localizableFormat]" to format dates according to the chosen locale.
 * New plugin "[timeZone]" to parse from and format to a date string using a time zone specified by its canonical name.
 * Corrected plugin "[relativeTime]" honouring grammar rules of the supported languages.
 * "[UTC mode]" for working in UTC, or for working with date-only values without the time part.
@@ -119,7 +119,7 @@ Day.js is Extended licensed under a [MIT  License](./LICENSE).
 [original project]: https://github.com/iamkun/dayjs
 [sponsor list at the original project]: https://github.com/iamkun/dayjs#sponsors
 [contributor list at the original project]: https://github.com/iamkun/dayjs#sponsors
-[localisableFormat]: ./docs/en/Plugin.md#localisableformat
+[localizableFormat]: ./docs/en/Plugin.md#localizableformat
 [timeZone]: ./docs/en/Plugin.md#timezone
 [relativeTime]: ./docs/en/Plugin.md#relativetime
 [UTC mode]: ./docs/en/API-reference.md#utc-mode
