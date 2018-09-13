@@ -1,4 +1,3 @@
-#sudo: false
 language: node_js
 cache:
   directories:
@@ -7,13 +6,8 @@ notifications:
   email: false
 node_js:
   - '10'
-  #- '8'
-  #- '6'
 script:
-  #- npm run lint
-  #- npm test
   - if [ `node --version | cut -c 2-3` == '10' ]; then
-      #./node_modules/.bin/codecov;
       BABEL_ENV=build node build;
     fi
 after_success:
