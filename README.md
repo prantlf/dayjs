@@ -43,6 +43,7 @@ dayjs().startOf('month').add(1, 'day').set('year', 2018).format('YYYY-MM-DD HH:m
 * Corrected plugin "[relativeTime]" honouring grammar rules of the supported languages.
 * "[UTC mode]" for working in UTC, or for working with date-only values without the time part.
 * Additional locales ([cs], [sk]).
+* Check for `dayjs` instance by the `instanceof` operator.
 
 ---
 
