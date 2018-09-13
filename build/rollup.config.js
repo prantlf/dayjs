@@ -10,25 +10,10 @@ module.exports = (config) => {
         'dayjs'
       ],
       plugins: [
-        {
-          transform ( code, id ) {
-            console.log('before babel', id)
-          }
-        },
         babel({
           exclude: 'node_modules/**'
         }),
-        {
-          transform ( code, id ) {
-            console.log('before uglify', id)
-          }
-        },
-        uglify(),
-        {
-          transform ( code, id ) {
-            console.log('after all', id)
-          }
-        },
+        uglify()
       ]
     },
     output: {
