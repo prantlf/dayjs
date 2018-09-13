@@ -12,7 +12,7 @@ node_js:
 script:
   - npm run lint
   - npm test
-  - codecov
+  - test `node --version | cut -c 2-3` -eq 10 && ./node_modules/.bin/codecov
   - test `node --version | cut -c 2-3` -eq 10 && npm run build
 after_success:
   - npm run travis-deploy-once "npm run semantic-release"
