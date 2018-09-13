@@ -81,7 +81,9 @@
     "build": "cross-env BABEL_ENV=build node build && npm run size",
     "sauce": "npx karma start karma.sauce.conf.js",
     "test:sauce": "npm run sauce -- 0 && npm run sauce -- 1 && npm run sauce -- 2  && npm run sauce -- 3",
-    "size": "size-limit && gzip-size dayjs.min.js"
+    "size": "size-limit && gzip-size dayjs.min.js",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
   "size-limit": [
     {
@@ -160,7 +162,9 @@
     "rollup-plugin-uglify": "^5.0.2",
     "size-limit": "^0.20.0",
     "timezone-support": "^1.1.2",
-    "typescript": "^3.0.3"
+    "typescript": "^3.0.3",
+    "travis-deploy-once": "^5.0.7",
+    "semantic-release": "^15.9.15"
   },
   "dependencies": {}
 }
