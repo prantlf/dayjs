@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/prantlf/dayjs/compare/v1.8.0...v1.9.0) (2018-09-13)
+
+
+### Features
+
+* Add Ukrainian (UA) locale ([acd628c](https://github.com/prantlf/dayjs/commit/acd628c))
+
 # [1.8.0](https://github.com/prantlf/dayjs/compare/v1.7.5...v1.8.0) (2018-09-13)
 
 
