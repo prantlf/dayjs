@@ -102,6 +102,7 @@
     ]
   },
   "release": {
+    "branch": "combined",
     "prepare": [
       {
         "path": "@semantic-release/changelog"
