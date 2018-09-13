@@ -16,11 +16,6 @@
        src="https://img.shields.io/codecov/c/github/prantlf/dayjs/master.svg?style=flat-square" alt="Codecov"></a>
     <a href="https://github.com/prantlf/dayjs/blob/master/LICENSE"><img
        src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="License"></a>
-    <br>
-    <a href="https://saucelabs.com/u/dayjs-ext"><img
-       width="750"
-       src="https://user-images.githubusercontent.com/17680888/40040137-8e3323a6-584b-11e8-9dba-bbe577ee8a7b.png"
-       alt="Sauce Test Status"></a>
 </p>
 
 > Day.js is a minimalist JavaScript library that parses, validates, manipulates, and displays dates and times for modern browsers with a largely Moment.js-compatible API. If you use Moment.js, you already know how to use Day.js.
@@ -42,7 +37,7 @@ dayjs().startOf('month').add(1, 'day').set('year', 2018).format('YYYY-MM-DD HH:m
 * New plugin "[timeZone]" to parse from and format to a date string using a time zone specified by its canonical name.
 * Corrected plugin "[relativeTime]" honouring grammar rules of the supported languages.
 * "[UTC mode]" for working in UTC, or for working with date-only values without the time part.
-* Additional locales ([cs], [sk]).
+* Additional locales ([cs], [sk], [ua]).
 * Check for `dayjs` instance by the `instanceof` operator.
 
 ---
@@ -126,3 +121,4 @@ Day.js is Extended licensed under a [MIT  License](./LICENSE).
 [UTC mode]: ./docs/en/API-reference.md#utc-mode
 [cs]: ./src/locale/cs.js
 [sk]: ./src/locale/sk.js
+[sk]: ./src/locale/ua.js
