@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/prantlf/dayjs/compare/v1.7.5...v1.8.0) (2018-09-13)
+
+
+### Features
+
+* Introduce dayjs-ext - fork of days with extensions ([4ab9f9a](https://github.com/prantlf/dayjs/commit/4ab9f9a))
+
 ## [1.7.5](https://github.com/iamkun/dayjs/compare/v1.7.4...v1.7.5) (2018-08-10)
 
 
