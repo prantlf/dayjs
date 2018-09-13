@@ -410,6 +410,12 @@ dayjs.isDayjs(dayjs()); // true
 dayjs.isDayjs(new Date()); // false
 ```
 
+The operator `instanceof` works equally well:
+
+```js
+dayjs() instanceof dayjs // true
+```
+
 ## UTC
 
 `Day.js` instances can be initialized using a string with any time zone offset. However, the native JavaScript `Date` object used internally works only in the local time zone with the support of accessing the object value in UTC too. If no time zone is specified, the local time zone is assumed. `Day.js` follows the same principle.

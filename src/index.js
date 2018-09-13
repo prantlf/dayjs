@@ -497,6 +497,8 @@ class Dayjs {
   }
 }
 
+dayjs.prototype = Dayjs.prototype
+
 dayjs.extend = (plugin, option) => {
   plugin(option, Dayjs, dayjs)
   return dayjs
