@@ -13,7 +13,7 @@ script:
   - npm run lint
   - npm test
   - test `node --version | cut -c 2-3` == '10' && ./node_modules/.bin/codecov
-  - test `node --version | cut -c 2-3` == '10' && npm run build
+  - test `node --version | cut -c 2-3` == '10' && BABEL_ENV=build node build
 after_success:
   - npm run travis-deploy-once "npm run semantic-release"
 branches:
