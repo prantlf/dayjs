@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/prantlf/dayjs/compare/v1.9.0...v1.10.0) (2018-09-14)
+
+
+### Features
+
+* CustomParseFormat - a plugin for the constructor to parse strings in custom formats ([2158218](https://github.com/prantlf/dayjs/commit/2158218))
+
 # [1.9.0](https://github.com/prantlf/dayjs/compare/v1.8.0...v1.9.0) (2018-09-13)
 
 
