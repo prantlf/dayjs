@@ -14,6 +14,10 @@
        src="https://img.shields.io/travis/prantlf/dayjs/master.svg?style=flat-square" alt="Build Status"></a>
     <a href="https://codecov.io/gh/prantlf/dayjs"><img
        src="https://img.shields.io/codecov/c/github/prantlf/dayjs/master.svg?style=flat-square" alt="Codecov"></a>
+    <a href="https://david-dm.org/prantlf/dayjs"><img
+       src="https://david-dm.org/prantlf/dayjs.svg" alt="Dependency Status"></a>
+    <a href="https://david-dm.org/prantlf/dayjs#info=devDependencies"><img
+       src="https://david-dm.org/prantlf/dayjs/dev-status.svg" alt="Dependency Status"></a>
     <a href="https://github.com/prantlf/dayjs/blob/master/LICENSE"><img
        src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="License"></a>
 </p>
