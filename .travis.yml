@@ -1,4 +1,5 @@
-sudo: false
+sudo: required
+dist: trusty
 language: node_js
 cache:
   directories:
@@ -12,12 +13,15 @@ node_js:
 script:
   - npm run lint
   - npm test
-  - if [ `node --version | cut -c 2-3` == '10' ]; then
-      ./node_modules/.bin/codecov;
-      BABEL_ENV=build node build;
-    fi
 after_success:
-  - npm run travis-deploy-once "npm run semantic-release"
+  - if [ `node --version | cut -c 2-3` == '10' ] && [ "$TRAVIS_BRANCH" == "combined" ] && [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
+      npm install -g codecov;
+      codecov;
+      npm run build;
+      npm install -g @semantic-release/changelog @semantic-release/git semantic-release travis-deploy-once;
+      travis-deploy-once;
+      semantic-release;
+    fi
 branches:
   except:
     - /^master|(?:v\d+\.\d+\.\d+)$/

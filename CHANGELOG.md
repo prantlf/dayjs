@@ -1,3 +1,24 @@
+# [1.10.0](https://github.com/prantlf/dayjs/compare/v1.9.0...v1.10.0) (2018-09-14)
+
+
+### Features
+
+* CustomParseFormat - a plugin for the constructor to parse strings in custom formats ([2158218](https://github.com/prantlf/dayjs/commit/2158218))
+
+# [1.9.0](https://github.com/prantlf/dayjs/compare/v1.8.0...v1.9.0) (2018-09-13)
+
+
+### Features
+
+* Add Ukrainian (UA) locale ([acd628c](https://github.com/prantlf/dayjs/commit/acd628c))
+
+# [1.8.0](https://github.com/prantlf/dayjs/compare/v1.7.5...v1.8.0) (2018-09-13)
+
+
+### Features
+
+* Introduce dayjs-ext - fork of days with extensions ([4ab9f9a](https://github.com/prantlf/dayjs/commit/4ab9f9a))
+
 ## [1.7.5](https://github.com/iamkun/dayjs/compare/v1.7.4...v1.7.5) (2018-08-10)
 
 
