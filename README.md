@@ -127,4 +127,4 @@ Day.js is Extended licensed under a [MIT  License](./LICENSE).
 [UTC mode]: ./docs/en/API-reference.md#utc-mode
 [cs]: ./src/locale/cs.js
 [sk]: ./src/locale/sk.js
-[sk]: ./src/locale/ua.js
+[ua]: ./src/locale/ua.js
