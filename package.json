@@ -161,6 +161,7 @@
     "karma-sauce-launcher": "^1.2.0",
     "mockdate": "^2.0.2",
     "moment": "^2.22.2",
+    "moment-timezone": "^0.5.21",
     "rollup": "^0.65.2",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-uglify": "^5.0.2",
