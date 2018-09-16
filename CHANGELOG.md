@@ -1,3 +1,11 @@
+## [1.10.1](https://github.com/prantlf/dayjs/compare/v1.10.0...v1.10.1) (2018-09-15)
+
+
+### Bug Fixes
+
+* **typings:** default export issue[#277](https://github.com/prantlf/dayjs/issues/277) ([149d477](https://github.com/prantlf/dayjs/commit/149d477))
+* Do not clone the Date instance needlessly in toISOString ([088cdc5](https://github.com/prantlf/dayjs/commit/088cdc5))
+
 # [1.10.0](https://github.com/prantlf/dayjs/compare/v1.9.0...v1.10.0) (2018-09-14)
 
 
