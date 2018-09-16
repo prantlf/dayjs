@@ -1,10 +1,11 @@
-const { createSuite, runSuites } = require('./benchmark')
 
 const moment = require('moment')
 const datefnsParse = require('date-fns/parse')
+const { createSuite, runSuites } = require('./benchmark')
 const dayjs = require('..')
 
 const customParseFormat = require('../plugin/customParseFormat')
+
 dayjs.extend(customParseFormat)
 
 const scenarios = [
@@ -33,9 +34,9 @@ const suites = scenarios.map(({ input, label }) =>
     .add('Day.js', () => dayjs(input))
     .add('Date', () => parseDate(input)))
 
-const customParseSuite = createSuite(`create from a custom-formatted string`)
-    .add('Moment.js', () => moment(customInput, customFormat))
-    .add('date-fns', () => parseDateFnsDate(customInput, customFormat))
-    .add('Day.js', () => dayjs(customInput, { format: customFormat }))
+const customParseSuite = createSuite('create from a custom-formatted string')
+  .add('Moment.js', () => moment(customInput, customFormat))
+  .add('date-fns', () => parseDateFnsDate(customInput, customFormat))
+  .add('Day.js', () => dayjs(customInput, { format: customFormat }))
 
 runSuites(suites.concat(customParseSuite))
