@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/prantlf/dayjs/compare/v1.10.1...v1.10.2) (2018-09-18)
+
+
+### Bug Fixes
+
+* Add customParseFormat to npm package ([15193ee](https://github.com/prantlf/dayjs/commit/15193ee))
+
 ## [1.10.1](https://github.com/prantlf/dayjs/compare/v1.10.0...v1.10.1) (2018-09-15)
 
 
