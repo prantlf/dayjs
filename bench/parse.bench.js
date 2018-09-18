@@ -22,21 +22,15 @@ function parseDate(input) {
   return new Date(input)
 }
 
-function parseDateFnsDate(input, format) {
-  const output = new Date(0)
-  datefnsParse(input, format, output)
-  return output
-}
-
 const suites = scenarios.map(({ input, label }) =>
   createSuite(`create from ${label}`)
     .add('Moment.js', () => moment(input))
+    .add('date-fns', () => datefnsParse(input))
     .add('Day.js', () => dayjs(input))
     .add('Date', () => parseDate(input)))
 
 const customParseSuite = createSuite('create from a custom-formatted string')
   .add('Moment.js', () => moment(customInput, customFormat))
-  .add('date-fns', () => parseDateFnsDate(customInput, customFormat))
   .add('Day.js', () => dayjs(customInput, { format: customFormat }))
 
 runSuites(suites.concat(customParseSuite))
