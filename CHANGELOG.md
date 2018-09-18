@@ -1,3 +1,10 @@
+## [1.10.3](https://github.com/prantlf/dayjs/compare/v1.10.2...v1.10.3) (2018-09-18)
+
+
+### Bug Fixes
+
+* Move timezone-support to dependencies; the plugin does not bundle it ([76144f2](https://github.com/prantlf/dayjs/commit/76144f2))
+
 ## [1.10.2](https://github.com/prantlf/dayjs/compare/v1.10.1...v1.10.2) (2018-09-18)
 
 
