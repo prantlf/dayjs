@@ -1,3 +1,17 @@
+# [1.11.0](https://github.com/prantlf/dayjs/compare/v1.10.4...v1.11.0) (2018-09-27)
+
+
+### Bug Fixes
+
+* **add dayjs.unix:** add dayjs.unix to parse timestamp in seconds && locale update ([5711c5e](https://github.com/prantlf/dayjs/commit/5711c5e))
+* **DST:** fix daylight saving time DST bug && add test ([#354](https://github.com/prantlf/dayjs/issues/354)) ([6fca6d5](https://github.com/prantlf/dayjs/commit/6fca6d5))
+* Retain UTC mode when constructing a new instance from another instance in UTC mode ([beb80fc](https://github.com/prantlf/dayjs/commit/beb80fc))
+
+
+### Features
+
+* Add static method dayjs.utc to help migration from Moment.js ([e640b57](https://github.com/prantlf/dayjs/commit/e640b57))
+
 ## [1.10.4](https://github.com/prantlf/dayjs/compare/v1.10.3...v1.10.4) (2018-09-26)
 
 
