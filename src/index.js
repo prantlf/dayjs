@@ -29,7 +29,11 @@ const parseLocale = (preset, object, isLocal) => {
 
 const dayjs = (date, c) => {
   if (isDayjs(date)) {
-    return date.clone()
+    if (c) {
+      date = date.toDate()
+    } else {
+      return date.clone()
+    }
   }
   const cfg = c || {}
   cfg.date = date
@@ -498,6 +502,11 @@ class Dayjs {
 }
 
 dayjs.prototype = Dayjs.prototype
+
+dayjs.utc = (date, c) => {
+  const cfg = { ...c, utc: true }
+  return dayjs(date, cfg)
+}
 
 dayjs.extend = (plugin, option) => {
   plugin(option, Dayjs, dayjs)
