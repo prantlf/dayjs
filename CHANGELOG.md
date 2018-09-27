@@ -1,3 +1,10 @@
+## [1.10.4](https://github.com/prantlf/dayjs/compare/v1.10.3...v1.10.4) (2018-09-26)
+
+
+### Bug Fixes
+
+* Upgrade timezone-support ([ccb7dad](https://github.com/prantlf/dayjs/commit/ccb7dad))
+
 ## [1.10.3](https://github.com/prantlf/dayjs/compare/v1.10.2...v1.10.3) (2018-09-18)
 
 
