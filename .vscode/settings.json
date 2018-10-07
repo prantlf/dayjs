@@ -4,6 +4,7 @@
     "locale": true,
     "node_modules": true,
     "plugin": true,
-    "*.min.js*": true
+    "*.min.js*": true,
+    "test/index.d.test.js": true
   }
 }

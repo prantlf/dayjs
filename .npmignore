@@ -11,6 +11,7 @@ package-lock.json
 
 # jest
 coverage
+test/index.d.test.js
 
 # dev
 src

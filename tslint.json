@@ -1,0 +1,56 @@
+{
+  "extends": [
+    "tslint-config-airbnb-base",
+    "tslint-eslint-rules"
+  ],
+  "plugins": [
+    "jest"
+  ],
+  "env": {
+    "jest/globals": true
+  },
+  "globals": {
+    "window": true,
+    "dayjs": true
+  },
+  "rules": {
+    "semicolon": [
+      2,
+      "never"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "no-param-reassign": [
+      0
+    ],
+    "func-names": [
+      0
+    ],
+    "implicit-arrow-linebreak": [
+      0
+    ],
+    "import/no-extraneous-dependencies": [
+      0
+    ],
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": [
+          "dayjs"
+        ]
+      }
+    ],
+    "import/extensions": [
+      2,
+      "ignorePackages"
+    ],
+    "object-curly-newline": [
+      0
+    ],
+    "operator-linebreak": [
+      0
+    ]
+  }
+}

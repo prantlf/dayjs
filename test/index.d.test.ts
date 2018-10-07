@@ -1,81 +1,90 @@
+// tslint:disable no-magic-numbers
+
 import dayjs from '../src'
+import isLeapYear from '../src/plugin/isLeapYear'
 
-dayjs()
+dayjs.extend(isLeapYear)
 
-dayjs('1993-03-1')
+declare function test (label: string, callback: Function)
 
-dayjs(730944000000)
+test('Type declarations for TypeScript', () => {
+  dayjs()
 
-dayjs(new Date(1993, 3, 1))
+  dayjs('1993-03-1')
 
-dayjs().clone()
+  dayjs(730944000000)
 
-dayjs().isValid()
+  dayjs(new Date(1993, 3, 1))
 
-dayjs().year()
+  dayjs().clone()
 
-dayjs().month()
+  dayjs().isValid()
 
-dayjs().date()
+  dayjs().year()
 
-dayjs().day()
+  dayjs().month()
 
-dayjs().hour()
+  dayjs().date()
 
-dayjs().minute()
+  dayjs().day()
 
-dayjs().second()
+  dayjs().hour()
 
-dayjs().millisecond()
+  dayjs().minute()
 
-dayjs().set('month', 3)
-dayjs().set('second', 30)
+  dayjs().second()
 
-dayjs().add(7, 'day')
+  dayjs().millisecond()
 
-dayjs().subtract(7, 'year')
+  dayjs().set('month', 3)
+  dayjs().set('second', 30)
 
-dayjs().startOf('year')
+  dayjs().add(7, 'day')
 
-dayjs().endOf('month')
+  dayjs().subtract(7, 'year')
 
-dayjs().startOf('month').add(1, 'day').subtract(1, 'year')
+  dayjs().startOf('year')
 
-dayjs().format()
-dayjs().format('[YYYY] MM-DDTHH:mm:ssZ')
+  dayjs().endOf('month')
 
-dayjs().diff(dayjs(), 'year')
+  dayjs().startOf('month').add(1, 'day').subtract(1, 'year')
 
-dayjs().valueOf()
+  dayjs().format()
+  dayjs().format('[YYYY] MM-DDTHH:mm:ssZ')
 
-dayjs().unix()
+  dayjs().diff(dayjs(), 'year')
 
-dayjs().daysInMonth()
+  dayjs().valueOf()
 
-dayjs().toDate()
+  dayjs().unix()
 
-dayjs().toArray()
+  dayjs().daysInMonth()
 
-dayjs().toJSON()
+  dayjs().toDate()
 
-dayjs().toISOString()
+  dayjs().toArray()
 
-dayjs().toObject()
+  dayjs().toJSON()
 
-dayjs().toString()
+  dayjs().toISOString()
 
-dayjs().isBefore(dayjs())
+  dayjs().toObject()
 
-dayjs().isSame(dayjs())
+  dayjs().toString()
 
-dayjs().isAfter(dayjs())
+  dayjs().isBefore(dayjs())
 
-dayjs('2000-01-01').isLeapYear()
+  dayjs().isSame(dayjs())
 
-dayjs().utc()
+  dayjs().isAfter(dayjs())
 
-dayjs().local()
+  dayjs('2000-01-01').isLeapYear()
 
-dayjs().isUTC()
+  dayjs().utc()
 
-dayjs().utcOffset()
+  dayjs().local()
+
+  dayjs().isUTC()
+
+  dayjs().utcOffset()
+})
