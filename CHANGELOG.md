@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/prantlf/dayjs/compare/v1.11.0...v1.11.1) (2018-09-29)
+
+
+### Bug Fixes
+
+* Do not store the Date object instance passed to the dayjs function ([08d518c](https://github.com/prantlf/dayjs/commit/08d518c))
+
 # [1.11.0](https://github.com/prantlf/dayjs/compare/v1.10.4...v1.11.0) (2018-09-27)
 
 
