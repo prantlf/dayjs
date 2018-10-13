@@ -1,3 +1,13 @@
+## [1.11.2](https://github.com/prantlf/dayjs/compare/v1.11.1...v1.11.2) (2018-10-13)
+
+
+### Bug Fixes
+
+* Change the locale structure to support different plural rules and forms ([4ae6724](https://github.com/prantlf/dayjs/commit/4ae6724))
+* Convert sk and ua locales to the new format ([a0e42f9](https://github.com/prantlf/dayjs/commit/a0e42f9))
+* Convert weekdays in ru and ua locales to lower-case ([e9be3a0](https://github.com/prantlf/dayjs/commit/e9be3a0))
+* Extend checks for invalid date string in CustomParseFormat ([be71f6e](https://github.com/prantlf/dayjs/commit/be71f6e))
+
 ## [1.11.1](https://github.com/prantlf/dayjs/compare/v1.11.0...v1.11.1) (2018-09-29)
 
 
