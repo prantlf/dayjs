@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/prantlf/dayjs/compare/v1.12.0...v1.12.1) (2018-10-14)
+
+
+### Bug Fixes
+
+* Correct upgrading from the improved locale format to the ultimate one ([e1a290e](https://github.com/prantlf/dayjs/commit/e1a290e))
+
 # [1.12.0](https://github.com/prantlf/dayjs/compare/v1.11.2...v1.12.0) (2018-10-14)
 
 
