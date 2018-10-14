@@ -26,7 +26,7 @@ dayjs.extend(plugin, options) // with plugin options
 
 ```javascript
 import dayjs from 'dayjs-ext'
-import advancedFormat from 'dayjs/plugin/advancedFormat' // load on demand
+import advancedFormat from 'dayjs-ext/plugin/advancedFormat' // load on demand
 
 dayjs.extend(advancedFormat) // use plugin
 ```
@@ -194,7 +194,7 @@ dayjs('2010-10-20').isBetween('2010-10-19', dayjs('2010-10-25')); // true
 To escape characters, wrap them in square brackets (e.g. `[G]`). Punctuation symbols (-:/.()) do not need to be wrapped.
 
 ```customParseFormat
-import customParseFormat from 'dayjs/plugin/customParseFormat'
+import customParseFormat from 'dayjs-ext/plugin/customParseFormat'
 
 dayjs.extend(customParseFormat)
 
@@ -277,8 +277,8 @@ npm i --save dayjs timezone-support
 If you use `Day.js` and this plugin on a web page, include the time-zone module too:
 
 ```html
-<script arc="https://unpkg.com/dayjs/dayjs.min.js"></script>
-<script arc="https://unpkg.com/dayjs/plugin/timeZone.js"></script>
+<script arc="https://unpkg.com/dayjs-ext/dayjs.min.js"></script>
+<script arc="https://unpkg.com/dayjs-ext/plugin/timeZone.js"></script>
 <script arc="https://unpkg.com/timezone-support/dist/index.umd.js"></script>
 ```
 
