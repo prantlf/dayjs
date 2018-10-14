@@ -229,6 +229,8 @@ dayjs('05/02/69 1:02:03 PM -05:00', { format: 'MM/DD/YY H:mm:ss A Z' })
 | `A`    | AM PM            | Post or ante meridiem, upper-case |
 | `a`    | am pm            | Post or ante meridiem, lower-case |
 
+If the plugin [LocalizableFormat](#localizableformat) is installed, format tokens "L", "LT" and "LTS" can be used too. They will be translated to the concrete tokens above using the `locale` parameter passed to the `dayjs` constructor, or using the global `dayjs` locale.
+
 ### TimeZone
  - TimeZone extends `dayjs()` and `dayjs().format` APIs to support the most important usage scenatrios - parsing from a specific time zone and formatting in other time zone.
 

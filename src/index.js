@@ -27,6 +27,22 @@ const parseLocale = (preset, object, isLocal) => {
   return l
 }
 
+const getLocale = (locale) => {
+  if (typeof locale === 'string') {
+    // Get locale by its name.
+    return Ls[locale]
+  }
+  if (locale) {
+    // Register a locale object by its name.
+    const { name } = locale
+    Ls[name] = locale
+  } else {
+    // Get the de4fault locale.
+    locale = Ls[L]
+  }
+  return locale
+}
+
 const dayjs = (date, c) => {
   if (isDayjs(date)) {
     if (c) {
@@ -48,6 +64,7 @@ const wrapper = (date, instance, cloneDate) =>
 
 const Utils = U // for plugin use
 Utils.parseLocale = parseLocale
+Utils.getLocale = getLocale
 Utils.isDayjs = isDayjs
 Utils.wrapper = wrapper
 
