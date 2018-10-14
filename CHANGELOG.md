@@ -1,3 +1,12 @@
+## [1.12.2](https://github.com/prantlf/dayjs/compare/v1.12.1...v1.12.2) (2018-10-14)
+
+
+### Bug Fixes
+
+* Change the locale structure to support a special singular form ([1bb9c6b](https://github.com/prantlf/dayjs/commit/1bb9c6b))
+* Correct upgrading from the improved locale format to the ultimate one ([f39fb48](https://github.com/prantlf/dayjs/commit/f39fb48))
+* Update sk and ua locales to support the change in the locale format ([386e641](https://github.com/prantlf/dayjs/commit/386e641))
+
 ## [1.12.1](https://github.com/prantlf/dayjs/compare/v1.12.0...v1.12.1) (2018-10-14)
 
 
