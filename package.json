@@ -160,7 +160,7 @@
     "eslint": "^5.7.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jest": "^21.24.1",
+    "eslint-plugin-jest": "^21.25.1",
     "gzip-size-cli": "^3.0.0",
     "jasmine-core": "^3.2.1",
     "jest": "^23.6.0",
