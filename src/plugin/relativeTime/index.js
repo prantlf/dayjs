@@ -78,38 +78,6 @@ export default (o, c, d) => {
     loc.future = futures
     loc.past = pasts
   }
-  // Upgrade the improved, but not the final version of the localization,
-  // which supports two plurals by keys with two and three letters
-  // {
-  //   duration: { s: '...', m: '...', mm: '...', mmm: '...' },
-  //   future: { ... }, past: { ... }
-  // }
-  function upgradeImprovedLocale(loc) {
-    // Put one, two and three lettered strings to an array
-    function convertPlurals(object) {
-      return Object.keys(object).reduce((result, key) => {
-        const kl = key.length
-        const text = object[key]
-        if (kl === 1) {
-          // Leave the special singular without any number as-is
-          result[key] = text
-        } else {
-          // Array of plurals uses the two-letter key
-          const singularUnit = key[0]
-          const pluralUnit = singularUnit + singularUnit
-          // Make sure, that the unit-formatting string contains an array
-          const pluralForms = result[pluralUnit] || (result[pluralUnit] = [])
-          // Make sure, that the plural for 2-4 comes before the others in the array
-          pluralForms[kl - 2] = text
-        }
-        return result
-      }, {})
-    }
-    // Set localized expressions for durations, future and past to the locale
-    loc.duration = convertPlurals(loc.duration)
-    loc.future = convertPlurals(loc.future)
-    loc.past = convertPlurals(loc.past)
-  }
   // Upgrades old locale format to provide compatibility with older
   // localizations; the grammar may not be correct for fusional languages
   // {
@@ -120,8 +88,6 @@ export default (o, c, d) => {
     // Do not upgrade already upgraded locales
     if (loc.s) {
       upgradeSimpleLocale(loc)
-    } else if (typeof loc.duration.mm === 'string') {
-      upgradeImprovedLocale(loc)
     }
   }
   const fromTo = (input, withoutSuffix, instance, isFrom) => {

@@ -48,19 +48,6 @@ it('Locale keys', () => {
         expect(Object.keys(relativeTime).every(key =>
           // eslint-disable-next-line implicit-arrow-linebreak
           typeof relativeTime[key] === 'string')).toBeTruthy()
-      } else if (relativeTime.duration.mmm) {
-        // Improved locale object structure
-        expect(Object.keys(relativeTime).sort()).toEqual(['duration', 'future', 'past'].sort());
-        ['duration', 'future', 'past'].forEach(key =>
-          // eslint-disable-next-line implicit-arrow-linebreak
-          expect(Object.keys(relativeTime[key]).sort())
-            .toEqual(['d', 'dd', 'ddd', 'h', 'hh', 'hhh', 'm', 'mm', 'mmm',
-              'M', 'MM', 'MMM', 's', 'y', 'yy', 'yyy'].sort()));
-        ['duration', 'future', 'past'].forEach(key =>
-          // eslint-disable-next-line implicit-arrow-linebreak
-          Object.keys(relativeTime[key]).forEach(key2 =>
-            // eslint-disable-next-line implicit-arrow-linebreak
-            expect(typeof relativeTime[key][key2]).toEqual('string')))
       } else {
         // Ultimate locale object structure
         expect(Object.keys(relativeTime).sort()).toEqual(['duration', 'future', 'past'].sort());
