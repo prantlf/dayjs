@@ -1,5 +1,5 @@
 
-import dayjs from 'dayjs'
+import dayjs from 'dayjs-ext'
 
 const locale = {
   name: 'fa',
