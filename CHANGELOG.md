@@ -1,3 +1,11 @@
+## [1.12.3](https://github.com/prantlf/dayjs.git/compare/v1.12.2...v1.12.3) (2018-10-28)
+
+
+### Bug Fixes
+
+* [#386](https://github.com/prantlf/dayjs.git/issues/386) - Added logic to return just 0 ([1a09a57](https://github.com/prantlf/dayjs.git/commit/1a09a57))
+* Replace the internal logic for looking up the right plural form by using the fast-plural-rules NPM module ([6253bcd](https://github.com/prantlf/dayjs.git/commit/6253bcd))
+
 ## [1.12.2](https://github.com/prantlf/dayjs/compare/v1.12.1...v1.12.2) (2018-10-14)
 
 
