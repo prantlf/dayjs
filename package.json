@@ -144,6 +144,7 @@
     "url": "https://github.com/prantlf/dayjs/issues"
   },
   "dependencies": {
+    "fast-plural-rules": "^0.0.1",
     "timezone-support": "^1.5.5"
   },
   "devDependencies": {

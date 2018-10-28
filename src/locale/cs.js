@@ -14,8 +14,7 @@ const locale = {
     LLLL: 'dddd D. MMMM YYYY H:mm'
   },
   relativeTime: {
-    // 3 plural forms for 1, 2-4, 5-
-    pluralRule: 8,
+    // Using 3 plural forms for 1, 2-4, 5-
     duration: {
       s: 'několik sekund',
       m: 'minuta',

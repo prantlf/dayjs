@@ -7,7 +7,7 @@ module.exports = (config) => {
     input: {
       input,
       external: [
-        'dayjs', 'timezone-support'
+        'dayjs', 'fast-plural-rules', 'timezone-support'
       ],
       plugins: [
         babel({
@@ -22,6 +22,7 @@ module.exports = (config) => {
       name: name || 'dayjs',
       globals: {
         dayjs: 'dayjs',
+        'fast-plural-rules': 'fastPluralRules',
         'timezone-support': 'timezone-support'
       },
       sourcemap: true

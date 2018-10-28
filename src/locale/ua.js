@@ -13,8 +13,7 @@ const locale = {
     LLLL: 'dddd, D MMMM YYYY р., H:mm'
   },
   relativeTime: {
-    // 3 plural forms for 1 and x1, 2-4 and x2-4, 5-
-    pluralRule: 7,
+    // Using 3 plural forms for 1 and x1, 2-4 and x2-4, 5-
     duration: {
       s: 'кілька секунд',
       m: 'хвилина',
