@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/prantlf/dayjs.git/compare/v1.12.3...v2.0.0) (2018-10-28)
+
+
+### Bug Fixes
+
+* Remove the locale "ua" and leave just "uk", which is correct according to ISO 639 ([7917304](https://github.com/prantlf/dayjs.git/commit/7917304))
+
+
+### BREAKING CHANGES
+
+* The locale "ua" is not suported any more. Use the identifier "uk" for the Ukrainian language.
+
 ## [1.12.3](https://github.com/prantlf/dayjs.git/compare/v1.12.2...v1.12.3) (2018-10-28)
 
 
