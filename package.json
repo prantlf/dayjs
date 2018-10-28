@@ -105,7 +105,10 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*"
-    ]
+    ],
+    "moduleNameMapper": {
+      "dayjs-ext": "<rootDir>/src"
+    }
   },
   "release": {
     "branch": "combined",
