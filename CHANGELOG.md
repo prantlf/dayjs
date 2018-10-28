@@ -1,3 +1,12 @@
+## [2.0.2](https://github.com/prantlf/dayjs.git/compare/v2.0.1...v2.0.2) (2018-10-28)
+
+
+### Bug Fixes
+
+* Fix loading localization modules ([31cb5a5](https://github.com/prantlf/dayjs.git/commit/31cb5a5))
+* Fix loading localization modules II ([5c1b8d4](https://github.com/prantlf/dayjs.git/commit/5c1b8d4))
+* Remove the reference to the earlier removed "ua" locale module. ([d5ade02](https://github.com/prantlf/dayjs.git/commit/d5ade02))
+
 ## [2.0.1](https://github.com/prantlf/dayjs.git/compare/v2.0.0...v2.0.1) (2018-10-28)
 
 
