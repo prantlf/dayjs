@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/prantlf/dayjs.git/compare/v2.0.0...v2.0.1) (2018-10-28)
+
+
+### Bug Fixes
+
+* Remove support of the intermediate localization format ([1e1c5f6](https://github.com/prantlf/dayjs.git/commit/1e1c5f6))
+
 # [2.0.0](https://github.com/prantlf/dayjs.git/compare/v1.12.3...v2.0.0) (2018-10-28)
 
 
