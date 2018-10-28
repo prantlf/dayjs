@@ -42,10 +42,56 @@ dayjs().startOf('month').add(1, 'day').set('year', 2018).format('YYYY-MM-DD HH:m
 * New plugin "[timeZone]" to parse from and format to a date string using a time zone specified by its canonical name.
 * Corrected plugin "[relativeTime]" honouring grammar rules of the supported languages.
 * "[UTC mode]" for working in UTC, or for working with date-only values without the time part.
-* Additional locales ([cs], [sk], [uk]).
+* Additional locales ([cs], [ru], [sk], [uk]).
 * Check for `dayjs` instance by the `instanceof` operator.
 
----
+## Synopsis
+
+`Day.js` is usually imported via a "proxy module", which loads required plugins and registers required language packs. For example, via the following `dayjs-local.js`:
+
+```js
+// Load dayjs, plugins and language packs.
+import dayjs from 'dayjs-ext'
+import timeZonePlugin from 'dayjs-ext/plugin/timeZone'
+import customParseFormat from 'dayjs-ext/plugin/customParseFormat'
+import localizableFormat from 'dayjs-ext/plugin/localizableFormat'
+import relativeTime from 'dayjs-ext/plugin/relativeTime'
+import 'dayjs-ext/locale/cs'
+import 'dayjs-ext/locale/sk'
+
+// Register plugins and language packs; Czech will be the default language.
+dayjs.extend(timeZonePlugin)
+     .extend(customParseFormat)
+     .extend(localizableFormat)
+     .extend(relativeTime)
+     .locale('cs')
+
+export default dayjs
+```
+
+Typical usage scenarios:
+
+
+```js
+import dayjs from './dayjs-local'
+
+// Load a date+time from a storage and show it to the user.
+const dateTime = dayjs('2018-10-28T18:45:00.000Z')
+console.log(dateTime.format({ format: 'L LT', timeZone: 'Europe/Prague' }))
+// Prints "28.10.2018 19:45".
+console.log(dateTime.fromNow())
+// Prints "před 5 hodinami" (5 hours ago).
+
+// Read a date+time from the user and format it for the storage.
+const dateTime = dayjs('28.10.2018 19:45', { format: 'L LT', timeZone: 'Europe/Prague' })
+console.log(dateTime.toISOString())
+// Prints "2018-10-28T18:45:00.000Z".
+
+// Set only the date; zero the time and prevent local time zone conversion.
+const dateOnly = dayjs('2018-10-28', { utc: true })
+console.log(dateOnly.format({ format: 'YYYY-MM-DD' }))
+// Prints "2018-10-28" anytime and anywhere.
+```
 
 ## Getting Started
 
@@ -126,5 +172,6 @@ Day.js is Extended licensed under a [MIT  License](./LICENSE).
 [relativeTime]: ./docs/en/Plugin.md#relativetime
 [UTC mode]: ./docs/en/API-reference.md#utc-mode
 [cs]: ./src/locale/cs.js
+[ru]: ./src/locale/ru.js
 [sk]: ./src/locale/sk.js
 [uk]: ./src/locale/uk.js
