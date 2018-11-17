@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/prantlf/dayjs/compare/v2.1.2...v2.2.0) (2018-11-17)
+
+
+### Features
+
+* Add time zone data module for years 1970-2038 ([2e5ec2d](https://github.com/prantlf/dayjs/commit/2e5ec2d))
+
 ## [2.1.2](https://github.com/prantlf/dayjs/compare/v2.1.1...v2.1.2) (2018-11-17)
 
 
