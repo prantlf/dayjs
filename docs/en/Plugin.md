@@ -277,6 +277,32 @@ Day.js uses an embedded `Date` object. This object supports only local time zone
 * The time zone parameter in the constructor is meant only for converting the parsed input string correctly to UTC. The embedded `Date` object will be initialised with UTC and offer the local time zone representation as usual. The original time zone offset will not be remembered. It is usually not important, because dates should be rendered consistently in user's time zone; not in various time zones, which their string sources referred to.
 * The time zone parameter in the `format` method will extract the date parts (year, month, ...) from the embedded `Date` object in UTC and convert them to the specified time zone, before producing the output string.
 
+#### Package Size
+
+The plugin includes all available time zone data in the main module `dayjs-ext/plugin/timeZone`. If you can afford limit the support for recent years only, you can reduce the size of your package, if you bundle `dayjs-ext` with other sources using rollup or webpack:
+
+```txt
+Full IANA TZ data:  923 KB minified, 33.3 KB gzipped
+Data for 1900-2050: 200 KB minified, 23.3 KB gzipped
+Data for 2012-2022:  27 KB minified,  6.5 KB gzipped
+```
+
+Modules with limited time zone data are exposed as `dayjs-ext/plugin/timeZone-1900-2050` and `dayjs-ext/plugin/timeZone-2012-2022`. A custom module with different time zone data can be used via `dayjs-ext/plugin/timeZone-custom`:
+
+```js
+import dayjs from 'dayjs-ext'
+import timeZonePlugin from 'dayjs-ext/plugin/timeZone-custom'
+
+import { populateTimeZones } from 'timezone-support/dist/lookup-convert'
+import timeZoneData from './data-1970-2025'
+
+populateTimeZones(timeZoneData)
+
+dayjs.extend(timeZonePlugin)
+```
+
+When `dayjs-ext` is loaded in the browser as described below, custom data can be loaded by using the [interface of `timezone-support` for limited data loading](https://github.com/prantlf/timezone-support/blob/master/docs/usage.md#limit-the-loaded-time-zone-data).
+
 #### Installation
 
 This plugin has a dependency on the [`timezone-support`](https://www.npmjs.com/package/timezone-support) NPM module. If you are going to use it on a web page directly, add its script to your section of `<script>`s too, along with the `Day.js`, for example:

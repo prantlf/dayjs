@@ -7,7 +7,9 @@ module.exports = (config) => {
     input: {
       input,
       external: [
-        'dayjs-ext', 'fast-plural-rules', 'timezone-support'
+        'dayjs-ext', 'fast-plural-rules', 'timezone-support/dist/lookup-convert',
+        'timezone-support/dist/data', 'timezone-support/dist/data-1900-2050',
+        'timezone-support/dist/data-2012-2022'
       ],
       plugins: [
         babel({
@@ -23,7 +25,10 @@ module.exports = (config) => {
       globals: {
         'dayjs-ext': 'dayjs',
         'fast-plural-rules': 'fastPluralRules',
-        'timezone-support': 'timezone-support'
+        'timezone-support/dist/lookup-convert': 'timezone-support',
+        'timezone-support/dist/data': 'timezone-data',
+        'timezone-support/dist/data-1900-2050': 'timezone-data-1900-2050',
+        'timezone-support/dist/data-2012-2022': 'timezone-data-2012-2022'
       },
       sourcemap: true
     }
