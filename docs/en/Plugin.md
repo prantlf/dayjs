@@ -140,9 +140,9 @@ Returns the `string` of relative time to X.
 This plugin has a dependency on the [`fast-plural-rules`](https://www.npmjs.com/package/fast-plural-rules) NPM module. If you are going to use it on a web page directly, add its script to your section of `<script>`s too, along with the `Day.js`, for example:
 
 ```html
+<script arc="https://unpkg.com/fast-plural-rules/dist/index.umd.js"></script>
 <script arc="https://unpkg.com/dayjs-ext/dayjs.min.js"></script>
 <script arc="https://unpkg.com/dayjs-ext/plugin/relativeTime.js"></script>
-<script arc="https://unpkg.com/fast-plural-rules/dist/index.umd.js"></script>
 ```
 
 ### IsLeapYear
@@ -282,11 +282,10 @@ Day.js uses an embedded `Date` object. This object supports only local time zone
 This plugin has a dependency on the [`timezone-support`](https://www.npmjs.com/package/timezone-support) NPM module. If you are going to use it on a web page directly, add its script to your section of `<script>`s too, along with the `Day.js`, for example:
 
 ```html
-<script arc="https://unpkg.com/dayjs-ext/dayjs.min.js"></script>
-<-- include "timeZone-1900-2050" or "timeZone-2012-2022" to save your package size -->
-<script arc="https://unpkg.com/dayjs-ext/plugin/timeZone.js"></script>
 <-- include "index-1900-2050.umd.js" or "index-2012-2022.umd.js" to save your package size -->
 <script arc="https://unpkg.com/timezone-support/dist/index.umd.js"></script>
+<script arc="https://unpkg.com/dayjs-ext/dayjs.min.js"></script>
+<script arc="https://unpkg.com/dayjs-ext/plugin/timeZone.js"></script>
 ```
 
 ## Customize
