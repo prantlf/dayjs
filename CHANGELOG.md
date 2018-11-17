@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/prantlf/dayjs/compare/v2.1.0...v2.1.1) (2018-11-17)
+
+
+### Bug Fixes
+
+* Add new locales and timeZone plugin versions to the module file list ([a84fbd4](https://github.com/prantlf/dayjs/commit/a84fbd4))
+
 # [2.1.0](https://github.com/prantlf/dayjs/compare/v2.0.2...v2.1.0) (2018-11-17)
 
 
