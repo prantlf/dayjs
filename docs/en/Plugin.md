@@ -245,7 +245,8 @@ If the plugin [LocalizableFormat](#localizableformat) is installed, format token
  - TimeZone extends `dayjs()` and `dayjs().format` APIs to support the most important usage scenatrios - parsing from a specific time zone and formatting in other time zone.
 
 ```javascript
-// import "timeZone-1900-2050" or "timeZone-2012-2022" to save your package size
+// import "timeZone-1900-2050", "timeZone-1970-2038"
+// or "timeZone-2012-2022" to save your package size
 import timeZone from 'dayjs-ext/plugin/timeZone'
 
 dayjs.extend(timeZone)
@@ -284,10 +285,11 @@ The plugin includes all available time zone data in the main module `dayjs-ext/p
 ```txt
 Full IANA TZ data:  923 KB minified, 33.3 KB gzipped
 Data for 1900-2050: 200 KB minified, 23.3 KB gzipped
+Data for 1970-2038: 135 KB minified, 13.9 KB gzipped
 Data for 2012-2022:  27 KB minified,  6.5 KB gzipped
 ```
 
-Modules with limited time zone data are exposed as `dayjs-ext/plugin/timeZone-1900-2050` and `dayjs-ext/plugin/timeZone-2012-2022`. A custom module with different time zone data can be used via `dayjs-ext/plugin/timeZone-custom`:
+Modules with limited time zone data are exposed as `dayjs-ext/plugin/timeZone-1900-2050`, `dayjs-ext/plugin/timeZone-1970-2038` and `dayjs-ext/plugin/timeZone-2012-2022`. A custom module with different time zone data can be used via `dayjs-ext/plugin/timeZone-custom`:
 
 ```js
 import dayjs from 'dayjs-ext'
@@ -308,7 +310,8 @@ When `dayjs-ext` is loaded in the browser as described below, custom data can be
 This plugin has a dependency on the [`timezone-support`](https://www.npmjs.com/package/timezone-support) NPM module. If you are going to use it on a web page directly, add its script to your section of `<script>`s too, along with the `Day.js`, for example:
 
 ```html
-<-- include "index-1900-2050.umd.js" or "index-2012-2022.umd.js" to save your package size -->
+<-- include "index-1900-2050.umd.js", "index-1970-2038.umd.js"
+    or "index-2012-2022.umd.js" to save your package size -->
 <script arc="https://unpkg.com/timezone-support/dist/index.umd.js"></script>
 <script arc="https://unpkg.com/dayjs-ext/dayjs.min.js"></script>
 <script arc="https://unpkg.com/dayjs-ext/plugin/timeZone.js"></script>

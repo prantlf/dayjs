@@ -84,6 +84,8 @@
     "plugin/timeZone-custom.js.map",
     "plugin/timeZone-1900-2050.js",
     "plugin/timeZone-1900-2050.js.map",
+    "plugin/timeZone-1970-2038.js",
+    "plugin/timeZone-1970-2038.js.map",
     "plugin/timeZone-2012-2022.js",
     "plugin/timeZone-2012-2022.js.map",
     "plugin/weekOfYear.js",
@@ -158,7 +160,7 @@
   },
   "dependencies": {
     "fast-plural-rules": "^0.0.1",
-    "timezone-support": "^1.7.0"
+    "timezone-support": "^1.8.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",

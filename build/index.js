@@ -35,7 +35,7 @@ async function build(option) {
       }))
     })
 
-    const timeZoneVariants = ['custom', '1900-2050', '2012-2022']
+    const timeZoneVariants = ['custom', '1900-2050', '1970-2038', '2012-2022']
     timeZoneVariants.forEach((moduleName) => {
       build(configFactory({
         input: `./src/plugin/timeZone/${moduleName}`,
