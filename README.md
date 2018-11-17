@@ -52,6 +52,7 @@ dayjs().startOf('month').add(1, 'day').set('year', 2018).format('YYYY-MM-DD HH:m
 ```js
 // Load dayjs, plugins and language packs.
 import dayjs from 'dayjs-ext'
+// import "timeZone-1900-2050" or "timeZone-2012-2022" to save your package size
 import timeZonePlugin from 'dayjs-ext/plugin/timeZone'
 import customParseFormat from 'dayjs-ext/plugin/customParseFormat'
 import localizableFormat from 'dayjs-ext/plugin/localizableFormat'
@@ -99,7 +100,10 @@ If used in the browser, the following scripts would be needed:
 <script arc="https://unpkg.com/timezone-support/dist/index.umd.js"></script>
 <script arc="https://unpkg.com/fast-plural-rules/dist/index.umd.js"></script>
 <script arc="https://unpkg.com/dayjs-ext/dayjs.min.js"></script>
+<-- include "timeZone-1900-2050" or "timeZone-2012-2022" to save your package size -->
 <script arc="https://unpkg.com/dayjs-ext/plugin/timeZone.js"></script>
+<script arc="https://unpkg.com/dayjs-ext/plugin/customParseFormat.js"></script>
+<script arc="https://unpkg.com/dayjs-ext/plugin/localizableFormat.js"></script>
 <script arc="https://unpkg.com/dayjs-ext/plugin/relativeTime.js"></script>
 ```
 

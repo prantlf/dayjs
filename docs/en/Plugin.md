@@ -245,6 +245,7 @@ If the plugin [LocalizableFormat](#localizableformat) is installed, format token
  - TimeZone extends `dayjs()` and `dayjs().format` APIs to support the most important usage scenatrios - parsing from a specific time zone and formatting in other time zone.
 
 ```javascript
+// import "timeZone-1900-2050" or "timeZone-2012-2022" to save your package size
 import timeZone from 'dayjs-ext/plugin/timeZone'
 
 dayjs.extend(timeZone)
@@ -282,7 +283,9 @@ This plugin has a dependency on the [`timezone-support`](https://www.npmjs.com/p
 
 ```html
 <script arc="https://unpkg.com/dayjs-ext/dayjs.min.js"></script>
+<-- include "timeZone-1900-2050" or "timeZone-2012-2022" to save your package size -->
 <script arc="https://unpkg.com/dayjs-ext/plugin/timeZone.js"></script>
+<-- include "index-1900-2050.umd.js" or "index-2012-2022.umd.js" to save your package size -->
 <script arc="https://unpkg.com/timezone-support/dist/index.umd.js"></script>
 ```
 
