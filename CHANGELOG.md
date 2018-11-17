@@ -1,3 +1,10 @@
+## [2.1.2](https://github.com/prantlf/dayjs/compare/v2.1.1...v2.1.2) (2018-11-17)
+
+
+### Bug Fixes
+
+* Introduce a timeZone module allowing custom time zone data ([b778a61](https://github.com/prantlf/dayjs/commit/b778a61))
+
 ## [2.1.1](https://github.com/prantlf/dayjs/compare/v2.1.0...v2.1.1) (2018-11-17)
 
 
