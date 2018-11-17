@@ -1,3 +1,16 @@
+# [2.1.0](https://github.com/prantlf/dayjs/compare/v2.0.2...v2.1.0) (2018-11-17)
+
+
+### Bug Fixes
+
+* Merge new locales from the mainstream project ([e1a0558](https://github.com/prantlf/dayjs/commit/e1a0558))
+* Upgrade runtime and development dependencies ([241488d](https://github.com/prantlf/dayjs/commit/241488d))
+
+
+### Features
+
+* Include two versions of the timeZone plugin with limited data ([022a45a](https://github.com/prantlf/dayjs/commit/022a45a))
+
 ## [2.0.2](https://github.com/prantlf/dayjs.git/compare/v2.0.1...v2.0.2) (2018-10-28)
 
 
