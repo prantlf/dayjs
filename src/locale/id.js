@@ -16,16 +16,16 @@ const locale = {
     future: 'dalam %s',
     past: '%s yang lalu',
     s: 'beberapa detik',
-    m: 'semenit',
-    mm: '%d menit',
-    h: 'sejam',
-    hh: '%d jam',
-    d: 'sehari',
-    dd: '%d hari',
-    M: 'sebulan',
-    MM: '%d bulan',
-    y: 'setahun',
-    yy: '%d tahun'
+    m: '%d menit',
+    mm: '',
+    h: '%d jam',
+    hh: '',
+    d: '%d hari',
+    dd: '',
+    M: '%d bulan',
+    MM: '',
+    y: '%d tahun',
+    yy: ''
   },
   ordinal: n => `${n}.`
 }
