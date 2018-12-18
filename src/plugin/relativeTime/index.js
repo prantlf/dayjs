@@ -136,7 +136,7 @@ export default (o, c, d) => {
         const key = t.l
         if (key.length === 1) {
           // Handle singular using a special text without any number
-          out = loc[key]
+          out = loc[key].replace('%d', 1)
         } else {
           // Choose the plural form using the index decided by the plural rule
           const pluralForms = loc[key]
