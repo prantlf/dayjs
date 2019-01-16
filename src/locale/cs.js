@@ -24,7 +24,7 @@ const locale = {
       d: 'den',
       dd: ['%d den', '%d dny', '%d dní'],
       M: 'měsíc',
-      MM: ['%d měsíc', '%d měsíce', '%d měsícú'],
+      MM: ['%d měsíc', '%d měsíce', '%d měsíců'],
       y: 'rok',
       yy: ['%d rok', '%d roky', '%d let']
     },
@@ -37,7 +37,7 @@ const locale = {
       d: 'zítra',
       dd: ['za %d den', 'za %d dny', 'za %d dní'],
       M: 'za měsíc',
-      MM: ['za %d měsíc', 'za %d měsíce', 'za %d měsícú'],
+      MM: ['za %d měsíc', 'za %d měsíce', 'za %d měsíců'],
       y: 'za rok',
       yy: ['za %d rok', 'za %d roky', 'za %d let']
     },
